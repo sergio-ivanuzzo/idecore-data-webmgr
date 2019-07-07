@@ -2,13 +2,19 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
+    "baseUrl": ".",
     "sourceMap": true,
     "jsx": "react",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitUseStrict": true,
-    "outDir": "../dist/"
+    "outDir": "../dist/",
+    "paths": {
+      "@store/*": [
+        "./src/store/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules"

@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
 
-import * as UnitAction from '@store/actions/unitActions';
+import { UnitActionType } from '@store/actions/unitActions';
 
 export interface UnitTemplate {
     name: string;
@@ -47,7 +47,7 @@ export const initialState: UnitReducerState = {
 
 export const unitReducer = (state = initialState, action: AnyAction): UnitReducerState => {
     switch (action.type) {
-        case UnitAction.UNIT_FETCH_LIST_COMPLETE: {
+        case UnitActionType.UNIT_FETCH_LIST_COMPLETE: {
             return {
                 ...state,
                 unitItems: action.payload.unitItems

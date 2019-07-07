@@ -1,5 +1,3 @@
-const npm_package = require('./package.json');
-
 module.exports = {
     mode: "production",
 
@@ -8,8 +6,7 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"],
-        alias: npm_package._moduleAliases || {},
+        extensions: [".ts", ".tsx"]
     },
 
     module: {
