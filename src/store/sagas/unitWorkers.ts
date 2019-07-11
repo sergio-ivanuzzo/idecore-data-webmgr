@@ -1,14 +1,13 @@
-import { eventChannel, Subscribe, Unsubscribe, EventChannel, END } from 'redux-saga';
+import { eventChannel, EventChannel } from 'redux-saga';
 import { put, call, take, Effect } from 'redux-saga/effects';
 
 import { UnitActionType } from '@store/actions';
 import * as UnitAction from '@store/actions/unitActions';
 import * as WebSocketAction from '@store/actions/websocketActions';
 
-export const initWebSocketConnection = (): void => {
+export const initWebSocketConnection = (): EventChannel<any> => {
 
-    // @ts-ignore
-    return eventChannel((emitter): EventChannel => {
+    return eventChannel((emitter) => {
         const socket = new WebSocket('ws://127.0.0.1:9001');
 
         socket.onopen = (event: MessageEvent) => {
