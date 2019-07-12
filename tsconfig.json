@@ -11,6 +11,15 @@
     "noImplicitUseStrict": true,
     "outDir": "../dist/",
     "paths": {
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@containers/*": [
+        "./src/containers/*"
+      ],
       "@store/*": [
         "./src/store/*"
       ]

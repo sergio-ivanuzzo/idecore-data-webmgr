@@ -2,7 +2,7 @@ import { AnyAction } from 'redux';
 
 import { UnitActionType } from '@store/actions/unitActions';
 
-export interface UnitTemplate {
+export interface IUnitTemplate {
     name: string;
     entry: number;
     scale_x: number;
@@ -17,7 +17,7 @@ export interface UnitTemplate {
     resistance_arcane: number;
 }
 
-export interface Unit {
+export interface IUnit {
     id: number;
     health: number;
     max_health: number;
@@ -34,26 +34,26 @@ export interface Unit {
     orientation: number;
     map_id: number;
     region_id: number;
-    unit_template: UnitTemplate;
+    unit_template: IUnitTemplate;
 }
 
-export interface UnitReducerState {
-    unitItems: Array<Unit>;
+export interface IUnitReducerState {
+    unitItems: Array<IUnit>;
 }
 
-export const initialState: UnitReducerState = {
-    unitItems: []
-}
+export const initialState: IUnitReducerState = {
+    unitItems: [],
+};
 
-export const unitReducer = (state = initialState, action: AnyAction): UnitReducerState => {
+export const unitReducer = (state = initialState, action: AnyAction): IUnitReducerState => {
     switch (action.type) {
         case UnitActionType.UNIT_FETCH_LIST_COMPLETE: {
             return {
                 ...state,
-                unitItems: action.payload.unitItems
-            }
+                unitItems: action.payload.unitItems,
+            };
         }
         default:
             return state;
     }
-}
+};

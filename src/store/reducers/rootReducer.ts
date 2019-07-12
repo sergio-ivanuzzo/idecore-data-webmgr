@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { unitReducer, UnitReducerState } from './unitReducer';
+import { IUnitReducerState, unitReducer } from './unitReducer';
 
-export interface StoreState {
-    unitReducer: UnitReducerState
+export interface IStoreState {
+    unitReducer: IUnitReducerState;
 }
 
-export const rootReducer = combineReducers<StoreState>({
-    unitReducer
+export const rootReducer = combineReducers<IStoreState>({
+    unitReducer,
 });

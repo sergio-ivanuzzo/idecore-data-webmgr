@@ -1,8 +1,8 @@
-import { all, takeEvery, AllEffect } from 'redux-saga/effects';
+import { all, AllEffect, takeEvery } from 'redux-saga/effects';
 
-import { UnitActionType } from "@store/actions";
+import { UnitActionType } from '@store/actions';
 
-import unitSaga from "@store/sagas/unitWorkers";
+import unitSaga from '@store/sagas/unitWorkers';
 
 export function* rootSaga(): IterableIterator<AllEffect<any>> {
     yield all([
