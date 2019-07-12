@@ -5,11 +5,6 @@
     "baseUrl": ".",
     "sourceMap": true,
     "jsx": "react",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitUseStrict": true,
-    "outDir": "../dist/",
     "paths": {
       "@constants/*": [
         "./src/constants/*"
@@ -22,6 +17,9 @@
       ],
       "@store/*": [
         "./src/store/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
       ]
     }
   },

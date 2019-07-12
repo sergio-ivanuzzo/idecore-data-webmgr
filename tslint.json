@@ -24,6 +24,7 @@
                 "trace"
             ]
         },
+        "indent": [true, "space", 4],
         "no-debugger": true,
         "no-duplicate-super": true,
         "no-duplicate-switch-case": true,
