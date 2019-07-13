@@ -17,10 +17,6 @@ class UnitContainer extends React.Component<IUnitContainerProps> {
 	public render(): React.ReactNode {
 		return this.props.children;
 	}
-
-	protected handleUnitListFetch(): Promise<void> {
-		return;
-	}
 }
 
 const mapStateToProps = (state) => ({
