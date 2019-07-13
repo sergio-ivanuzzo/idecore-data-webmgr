@@ -9,6 +9,7 @@ export const initWebSocketConnection = (): EventChannel<any> => {
         const socket = new WebSocket(`ws://${Connection.websocket_host}:${Connection.websocket_port}`);
 
         socket.onopen = () => {
+            console.log('open');
             socket.send(JSON.stringify(WebSocketAction.actionWebsocketSubscribe()));
         };
 
