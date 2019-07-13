@@ -1,7 +1,7 @@
 import { eventChannel, EventChannel } from 'redux-saga';
 
-import Connection from '@constants/connection';
-import * as WebSocketAction from '@store/actions/websocketActions';
+import Connection from 'constants/connection';
+import * as WebSocketAction from 'store/actions/websocketActions';
 
 export const initWebSocketConnection = (): EventChannel<any> => {
 

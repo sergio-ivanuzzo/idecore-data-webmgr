@@ -2,14 +2,24 @@ import * as React from 'react';
 
 import { Provider } from 'react-redux';
 
-import { store } from '@store/store';
+import UnitContainer from 'containers/UnitContainer';
+import unitWatcher from 'store/sagas/unitWorkers';
+import { store } from 'store/store';
 
-export class App extends React.Component {
+class App extends React.Component {
+    public componentDidMount(): void {
+        unitWatcher();
+    }
+
     public render(): React.ReactNode {
         return (
             <Provider store={store}>
-                Test
+                <UnitContainer>
+                    Test
+                </UnitContainer>
             </Provider>
         );
     }
 }
+
+export default App;

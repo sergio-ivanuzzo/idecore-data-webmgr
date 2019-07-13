@@ -3,22 +3,25 @@
     "module": "commonjs",
     "target": "es2017",
     "baseUrl": ".",
+    "declaration": true,
+    "outDir": "./dist/",
+    "removeComments": true,
     "sourceMap": true,
     "jsx": "react",
     "paths": {
-      "@constants/*": [
+      "constants/*": [
         "./src/constants/*"
       ],
-      "@components/*": [
+      "components/*": [
         "./src/components/*"
       ],
-      "@containers/*": [
+      "containers/*": [
         "./src/containers/*"
       ],
-      "@store/*": [
+      "store/*": [
         "./src/store/*"
       ],
-      "@styles/*": [
+      "styles/*": [
         "./src/styles/*"
       ]
     }

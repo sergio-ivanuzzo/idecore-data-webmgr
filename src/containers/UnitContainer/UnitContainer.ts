@@ -1,13 +1,18 @@
 import * as React from 'react';
 
-import { IUnitContainerProps } from '@containers/UnitContainer/UnitContainerProps';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+
+import { IUnitContainerProps } from 'containers/UnitContainer/UnitContainerProps';
 
 class UnitContainer extends React.Component<IUnitContainerProps> {
 
 	public async componentDidMount(): Promise<void> {
-		await this.props.onUnitListFetch();
+		try {
+			await this.props.onUnitListFetch();
+		} catch (e) {
+			return;
+		}
 	}
 
 	public render(): React.ReactNode {
@@ -19,9 +24,12 @@ class UnitContainer extends React.Component<IUnitContainerProps> {
 	}
 }
 
-const mapStateToProps = (state) => undefined;
+const mapStateToProps = (state) => ({
+	unitsList: state.unitReducer.unitItems,
+});
+
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-	onUnitListFetch: this.handleUnitListFetch,
+	onUnitListFetch: dispatch(this.handleUnitListFetch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UnitContainer);
