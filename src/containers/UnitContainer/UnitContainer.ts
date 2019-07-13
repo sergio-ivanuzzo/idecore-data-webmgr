@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 
 import { IUnitContainerProps } from '~containers/UnitContainer/UnitContainerProps';
 
@@ -28,8 +27,4 @@ const mapStateToProps = (state) => ({
 	unitsList: state.unitReducer.unitItems,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-	onUnitListFetch: dispatch(this.handleUnitListFetch),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(UnitContainer);
+export default connect(mapStateToProps)(UnitContainer);
