@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
 
-import { UnitActionType } from 'store/actions/unitActions';
+import { UnitActionType } from '~store/actions/unitActions';
 
 export interface IUnitTemplate {
     name: string;

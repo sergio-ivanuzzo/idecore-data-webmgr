@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { IUnitContainerProps } from 'containers/UnitContainer/UnitContainerProps';
+import { IUnitContainerProps } from '~containers/UnitContainer/UnitContainerProps';
 
 class UnitContainer extends React.Component<IUnitContainerProps> {
 

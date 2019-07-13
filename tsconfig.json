@@ -9,23 +9,10 @@
     "sourceMap": true,
     "jsx": "react",
     "paths": {
-      "constants/*": [
-        "./src/constants/*"
-      ],
-      "components/*": [
-        "./src/components/*"
-      ],
-      "containers/*": [
-        "./src/containers/*"
-      ],
-      "store/*": [
-        "./src/store/*"
-      ],
-      "styles/*": [
-        "./src/styles/*"
-      ]
+      "~*": ["./src/*"]
     }
   },
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules"
   ]

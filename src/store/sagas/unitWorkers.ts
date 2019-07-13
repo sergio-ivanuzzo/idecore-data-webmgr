@@ -1,8 +1,8 @@
 import { call, Effect, put, take } from 'redux-saga/effects';
 
-import { UnitActionType } from 'store/actions';
-import * as UnitAction from 'store/actions/unitActions';
-import { initWebSocketConnection } from 'store/sagas/sources/websocketConnection';
+import { UnitActionType } from '~store/actions';
+import * as UnitAction from '~store/actions/unitActions';
+import { initWebSocketConnection } from '~store/sagas/sources/websocketConnection';
 
 export default function*(): IterableIterator<Effect<any>> {
     const channel = yield call(initWebSocketConnection);
