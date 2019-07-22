@@ -1,11 +1,17 @@
 import { combineReducers } from 'redux';
 
-import { IUnitReducerState, unitReducer } from './unitReducer';
+import { IPlayerReducerState, playersReducer } from './playersReducer';
+import { IRegionsReducerState, regionsReducer } from './regionsReducer';
+import { IUnitReducerState, unitsReducer } from './unitsReducer';
 
 export interface IStoreState {
-    unitReducer: IUnitReducerState;
+    playersReducer: IPlayerReducerState;
+    regionsReducer: IRegionsReducerState;
+    unitsReducer: IUnitReducerState;
 }
 
 export const rootReducer = combineReducers<IStoreState>({
-    unitReducer,
+    playersReducer,
+    regionsReducer,
+    unitsReducer,
 });

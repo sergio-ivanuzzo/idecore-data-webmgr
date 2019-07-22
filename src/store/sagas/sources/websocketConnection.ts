@@ -9,12 +9,16 @@ export const initWebSocketConnection = (): EventChannel<any> => {
         const socket = new WebSocket(`ws://${Connection.websocket_host}:${Connection.websocket_port}`);
 
         socket.onopen = () => {
-            console.log('open');
             socket.send(JSON.stringify(WebSocketAction.actionWebsocketSubscribe()));
         };
 
         socket.onmessage = (event: MessageEvent) => {
-            return emitter({ type: event.data.type, payload: event.data.payload });
+            const data = JSON.parse(event.data);
+            return emitter({ type: data.type, payload: data.payload });
+        };
+
+        socket.onerror = (event: Event) => {
+            console.info('error:', event);
         };
 
         // unsubscribe socket

@@ -2,18 +2,22 @@ import * as React from 'react';
 
 import { Provider } from 'react-redux';
 
-import UnitContainer from '~containers/UnitContainer';
+import RegionsContainer, {IInjectedProps} from '~containers/RegionsContainer';
 import { store } from '~store/store';
 
 class App extends React.Component {
     public render(): React.ReactNode {
         return (
             <Provider store={store}>
-                <UnitContainer>
-                    Test
-                </UnitContainer>
+                <RegionsContainer>
+                    {this.renderTable}
+                </RegionsContainer>
             </Provider>
         );
+    }
+
+    protected renderTable = (props: IInjectedProps): React.ReactNode => {
+        return null;
     }
 }
 
