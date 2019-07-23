@@ -16,7 +16,8 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.5",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.54",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

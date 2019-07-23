@@ -33,9 +33,12 @@ export const initialState: IPlayerReducerState = {
 export const playersReducer = (state = initialState, action: AnyAction): IPlayerReducerState => {
 	switch (action.type) {
 		case PlayersActionType.PLAYERS_FETCH_LIST_COMPLETE: {
+			const playerItems = [...state.playerItems, ...new Set(action.payload)] as Array<IPlayer>;
+			playerItems.sort((p1: IPlayer, p2: IPlayer): number => p1.name < p2.name ? -1 : 1);
+
 			return {
 				...state,
-				playerItems: action.payload,
+				playerItems,
 			};
 		}
 		default: {
